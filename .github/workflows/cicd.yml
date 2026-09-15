@@ -46,6 +46,9 @@ jobs:
         needs: build-and-push
         runs-on: self-hosted
         steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
             - name: Pull latest image and restart Docker Compose
               run: |
                   docker compose pull
